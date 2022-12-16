@@ -1,0 +1,30 @@
+[
+    {
+        "id":0,
+        "albumName":"Environment",
+        "urls":[
+            "Imgs/environment_1.jpg",
+            "Imgs/environment_2.jpg",
+            "Imgs/environment_3.jpg",
+            "Imgs/environment_4.jpg"
+        ]
+    },
+    {
+        "id":1,
+        "albumName":"Monkes",
+        "urls":[
+            "Imgs/monke_1.jpg",
+            "Imgs/monke_2.png",
+            "Imgs/monke_3.png"
+        ]
+    },
+    {
+        "id":2,
+        "albumName":"Ryans",
+        "urls":[
+            "Imgs/ryan_1.jpg",
+            "Imgs/ryan_2.png",
+            "Imgs/ryan_3.jpg"
+        ]
+    }
+]

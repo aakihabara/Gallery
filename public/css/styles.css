@@ -1,0 +1,77 @@
+body {
+    background-image: url('grnd.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: #615285;
+    position: relative;
+}
+
+.parent {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80vw;
+    background-color: white;
+    border: 5px solid #615285;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.child{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5vw;
+    border-radius: 1vw;
+}
+
+.bttns {
+    margin-left: auto;
+    margin-right: auto;
+    width: 40vw;
+    text-align: center;
+}
+.bttn {
+    width: 10vw;
+    color: #615285;
+    background-color: white;
+    border: 0.25vw solid #615285;
+    font-size: 1.5vw;
+    height: 3vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    margin-bottom: 1vw;
+}
+
+h1{
+    color: #615285;
+    border: 0.25vw solid #615285;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+}
+
+h1, button {
+    font-size:2vw;
+    width: 15vw;
+    text-align: center;
+    border-radius:2vw;
+}
+
+button {
+    border: solid #615285;
+    background-color: #615285;
+    color: white;
+}
+
+#pics{
+    width: 80vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pic {
+    margin: 2vw 2vw 2vw 2vw;
+    border-radius: 1vw;
+}

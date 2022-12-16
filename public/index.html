@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/lightbox.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="js/prototype.js"></script>
+    <script type="text/javascript" src="js/scriptaculous.js?load=effects,builder"></script>
+    <script type="text/javascript" src="js/lightbox.js"></script>
+</head>
+<body>
+    <h1>Gallery</h1>
+    <div class="bttns" id="forBt">
+        <button class="bttn" onclick="GetWholePics()">Все</button>
+    </div>
+
+    <br>
+    
+    <div class="parent" id="pics">
+        <div id="pics">
+
+        </div>
+    </div>
+
+    <script>
+        async function GetAlbums(){
+            const response = await fetch("/api/pics", {
+                method: "GET",
+                headers: { "Accept": "application/json" }
+            });
+
+            if (response.ok === true) {
+                const content = await response.json();
+                let res = document.getElementById("forBt");
+
+                content.forEach(album => {
+                    res.innerHTML += "<button onclick=GetPics(\'" + album.id + "\') class=\"bttn\">" + album.albumName + "</button>";
+                });
+            }
+        }
+        GetAlbums();
+
+        async function GetWholePics(){
+
+            const response = await fetch("/api/pics", {
+                method: "GET",
+                headers: { "Accept": "application/json" }
+            });
+
+            if (response.ok === true){
+
+                const content = await response.json();
+                let res = document.getElementById("pics");
+                res.innerHTML ="";
+
+                content.forEach(album => {
+                    for(let i = 0; i < album.urls.length; i++){
+                        res.innerHTML += "<img class='pic' src=\"" + album.urls[i] + "\" width=\"200\" height=\"140\">";
+                    }
+                });
+                
+            }
+        }
+        GetWholePics();
+
+        async function GetPics(id){
+
+            const response = await fetch("/api/pics/" + id, {
+                method: "GET",
+                headers: { "Accept": "application/json" }
+            });
+
+            if (response.ok === true){
+
+                const content = await response.json();
+                let res = document.getElementById("pics");
+                res.innerHTML ="";
+
+                content.forEach(pics => {
+                    res.innerHTML += "<img class='pic' src=\"" + pics + "\" width=\"200\" height=\"140\">";
+                });
+            }
+        }
+    </script>
+</body>
+</html>
